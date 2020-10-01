@@ -1184,141 +1184,169 @@ $size-header-pad: 4em;
 		100% { @include vendor('transform', 'rotate(360deg)'); }
 	};
 
-	.poptrox-popup {
-		@include vendor('box-sizing', 'content-box');
-		-webkit-tap-highlight-color: rgba(255,255,255,0);
-		background: #fff;
-		border-radius: _size(border-radius);
-		box-shadow: 0 0.1em 0.15em 0 rgba(0,0,0,0.15);
-		overflow: hidden;
-		padding-bottom: 3em;
+.poptrox-popup {
+    @include vendor('box-sizing', 'content-box');
+    -webkit-tap-highlight-color: rgba(255,255,255,0);
+    background: #fff;
+    border-radius: _size(border-radius);
+    box-shadow: 0 0.1em 0.15em 0 rgba(0,0,0,0.15);
+    overflow: hidden;
+    padding-bottom: 3em;
 
-		.loader {
-			@include icon(false, solid);
-			@include vendor('animation', 'spin 1s linear infinite');
-			font-size: 1.5em;
-			height: 1em;
-			left: 50%;
-			line-height: 1em;
-			margin: -0.5em 0 0 -0.5em;
-			position: absolute;
-			top: 50%;
-			width: 1em;
+    .loader {
+        @include icon(false, solid);
+        @include vendor('animation', 'spin 1s linear infinite');
+        font-size: 1.5em;
+        height: 1em;
+        left: 50%;
+        line-height: 1em;
+        margin: -0.5em 0 0 -0.5em;
+        position: absolute;
+        top: 50%;
+        width: 1em;
 
-			&:before {
-				content: '\f1ce';
-			}
-		}
+        &:before {
+            content: '\f1ce';
+        }
+    }
 
-		.caption {
-			background: #fff;
-			bottom: 0;
-			cursor: default;
-			font-size: 0.9em;
-			height: 3em;
-			left: 0;
-			line-height: 2.8em;
-			position: absolute;
-			text-align: center;
-			width: 100%;
-			z-index: 1;
-		}
+    .caption {
+        background: #fff;
+        bottom: 0;
+        cursor: default;
+        font-size: 0.9em;
+        height: 3em;
+        left: 0;
+        line-height: 2.8em;
+        position: absolute;
+        text-align: center;
+        width: 100%;
+        z-index: 1;
+    }
 
-		.nav-next,
-		.nav-previous {
-			@include icon(false, solid);
-			@include vendor('transition', 'opacity #{_duration(transition)} ease-in-out');
-			-webkit-tap-highlight-color: rgba(255,255,255,0);
-			background: rgba(0,0,0,0.01);
-			cursor: pointer;
-			height: 100%;
-			opacity: 0;
-			position: absolute;
-			top: 0;
-			width: 50%;
+     body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+    }
 
-			&:before {
-				color: #fff;
-				font-size: 2.5em;
-				height: 1em;
-				line-height: 1em;
-				margin-top: -0.75em;
-				position: absolute;
-				text-align: center;
-				top: 50%;
-				width: 1.5em;
-			}
-		}
+    .topnav {
+        overflow: hidden;
+        background-color: #333;
+    }
 
-		.nav-next {
-			right: 0;
+    .topnav a {
+        float: left;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 30px;
+    }
 
-			&:before {
-				content: '\f105';
-				right: 0;
-			}
-		}
+    .topnav a:hover {
+        background-color: #ddd;
+        color: white;
+    }
 
-		.nav-previous {
-			left: 0;
+    .topnav a.please {
+        background-color: #4CAF50;
+        color: white;
+    }
 
-			&:before {
-				content: '\f104';
-				left: 0;
-			}
-		}
+     .nav-next, .nav-previous {
+        @include icon(false, solid);
+        @include vendor('transition', 'opacity #{_duration(transition)} ease-in-out');
+        -webkit-tap-highlight-color: rgba(255,255,255,0);
+        background: rgba(0,0,0,0.01);
+        cursor: pointer;
+        height: 100%;
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        width: 50%;
 
-		.closer {
-			@include icon(false, solid);
-			@include vendor('transition', 'opacity #{_duration(transition)} ease-in-out');
-			-webkit-tap-highlight-color: rgba(255,255,255,0);
-			color: #fff;
-			height: 4em;
-			line-height: 4em;
-			opacity: 0;
-			position: absolute;
-			right: 0;
-			text-align: center;
-			top: 0;
-			width: 4em;
-			z-index: 2;
+        &:before {
+            color: #fff;
+            font-size: 2.5em;
+            height: 1em;
+            line-height: 1em;
+            margin-top: -0.75em;
+            position: absolute;
+            text-align: center;
+            top: 50%;
+            width: 1.5em;
+        }
+    }
 
-			&:before {
-				@include vendor('box-sizing', 'content-box');
-				border-radius: 100%;
-				border: solid 3px rgba(255,255,255,0.5);
-				content: '\f00d';
-				display: block;
-				font-size: 1em;
-				height: 1.75em;
-				left: 50%;
-				line-height: 1.75em;
-				margin: -0.875em 0 0 -0.875em;
-				position: absolute;
-				top: 50%;
-				width: 1.75em;
-			}
-		}
+    .nav-next {
+        right: 0;
 
-		&:hover {
-			.nav-next,
-			.nav-previous {
-				opacity: 0.5;
+        &:before {
+            content: '\f105';
+            right: 0;
+        }
+    }
 
-				&:hover {
-					opacity: 1.0;
-				}
-			}
+    .nav-previous {
+        left: 0;
 
-			.closer {
-				opacity: 0.5;
+        &:before {
+            content: '\f104';
+            left: 0;
+        }
+    }
 
-				&:hover {
-					opacity: 1.0;
-				}
-			}
-		}
-	}
+    .closer {
+        @include icon(false, solid);
+        @include vendor('transition', 'opacity #{_duration(transition)} ease-in-out');
+        -webkit-tap-highlight-color: rgba(255,255,255,0);
+        color: #fff;
+        height: 4em;
+        line-height: 4em;
+        opacity: 0;
+        position: absolute;
+        right: 0;
+        text-align: center;
+        top: 0;
+        width: 4em;
+        z-index: 2;
+
+        &:before {
+            @include vendor('box-sizing', 'content-box');
+            border-radius: 100%;
+            border: solid 3px rgba(255,255,255,0.5);
+            content: '\f00d';
+            display: block;
+            font-size: 1em;
+            height: 1.75em;
+            left: 50%;
+            line-height: 1.75em;
+            margin: -0.875em 0 0 -0.875em;
+            position: absolute;
+            top: 50%;
+            width: 1.75em;
+        }
+    }
+
+    &:hover {
+        .nav-next,
+        .nav-previous {
+            opacity: 0.5;
+
+            &:hover {
+                opacity: 1.0;
+            }
+        }
+
+        .closer {
+            opacity: 0.5;
+
+            &:hover {
+                opacity: 1.0;
+            }
+        }
+    }
+}
 
 /* Touch */
 
